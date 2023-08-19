@@ -1,0 +1,10 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "deleteOutDir": true,
+  "watchAssets": true,
+  "exclude": ["myPup"],
+  "compilerOptions": {
+    "assets": [{ "include": "./environments/*.env", "outDir": "./dist" }]
+  }
+}
