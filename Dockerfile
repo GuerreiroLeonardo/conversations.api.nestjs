@@ -1,6 +1,6 @@
 FROM node:18.12.1-alpine AS build
 
-# ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 WORKDIR /usr/src/app
 
@@ -17,8 +17,8 @@ RUN npm run build
 FROM node:18.12.1-alpine AS release
 
 
-# RUN apk update && apk add --no-cache chromium
-# ENV PUPPETEER_EXECUTABLE_PATH=/usr/lib/chromium/chrome
+RUN apk update && apk add --no-cache chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/lib/chromium/chrome
 
 WORKDIR /usr/src/app
 
